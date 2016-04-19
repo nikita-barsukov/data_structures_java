@@ -45,7 +45,6 @@ public class BubbleSortTest {
         }
 
         int[] arr_sorted =  bsrt.bubbleSort(arr);
-        System.out.println(Arrays.toString(arr_sorted));
 
         boolean monotonous_increase = true;
         for(int i=0; i < arr_sorted.length - 2; i++) {
