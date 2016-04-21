@@ -32,6 +32,7 @@ public class InsertionSortTest {
     public void insertionSortShuffledArray() throws Exception {
         int[] arr = new int[] {3,4,1,2,5};
         int[] arr_sorted = insrt.sort(arr);
+        System.out.print(Arrays.toString(arr_sorted));
         assertArrayEquals(new int[]{1,2,3,4,5}, arr_sorted);
     }
 
@@ -46,7 +47,6 @@ public class InsertionSortTest {
         int[] arr_sorted =  insrt.sort(arr);
 
         boolean monotonous_increase = true;
-        System.out.print(Arrays.toString(arr_sorted));
         for(int i=0; i < arr_sorted.length - 2; i++) {
             monotonous_increase = monotonous_increase && !(arr_sorted[i] > arr_sorted[i+1]);
         }
