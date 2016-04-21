@@ -45,7 +45,7 @@ public class BubbleSortTest {
 
         boolean monotonous_increase = true;
         for(int i=0; i < arr_sorted.length - 2; i++) {
-            monotonous_increase = !(arr_sorted[i] > arr_sorted[i+1]);
+            monotonous_increase = monotonous_increase && !(arr_sorted[i] > arr_sorted[i+1]);
         }
         assertTrue(monotonous_increase);
 
