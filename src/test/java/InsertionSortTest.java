@@ -32,7 +32,6 @@ public class InsertionSortTest {
     public void insertionSortShuffledArray() throws Exception {
         int[] arr = new int[] {3,4,1,2,5};
         int[] arr_sorted = insrt.sort(arr);
-        System.out.print(Arrays.toString(arr_sorted));
         assertArrayEquals(new int[]{1,2,3,4,5}, arr_sorted);
     }
 
