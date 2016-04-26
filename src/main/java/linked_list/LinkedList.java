@@ -1,5 +1,8 @@
 package linked_list;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class LinkedList<T> {
     private Node<T> head;
 
@@ -29,13 +32,48 @@ public class LinkedList<T> {
     }
 
     public int length(){
-        int init_length = 0;
+        int lngth = 0;
         Node<T> current = this.head;
         while(current != null){
             current = current.getNextNode();
-            init_length ++;
+            lngth ++;
         }
-        return init_length;
+        return lngth;
+    }
+
+    public void deleteDuplicates() {
+        Set<T> items = new HashSet<T>();
+        Node curr = this.getHead();
+        Node prev = null;
+
+        while(curr != null) {
+            if(items.contains(curr.getData())){
+                prev.setNextNode(curr.getNextNode());
+            } else{
+                items.add((T)curr.getData());
+                prev = curr;
+            }
+            curr = curr.getNextNode();
+        }
+    }
+
+    public void reverse() {
+        Node curr = this.getHead();
+        Node prev = null;
+        Node next;
+
+        while(curr != null){
+            next = curr.getNextNode();
+            curr.setNextNode(prev);
+            prev = curr;
+            curr = next;
+        }
+
+        this.setHead(prev);
+    }
+
+    private void setHead(Node<T> data) {
+        this.head = data;
     }
 
     public boolean isEmpty(){

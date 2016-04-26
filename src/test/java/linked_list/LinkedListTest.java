@@ -6,6 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class LinkedListTest {
+
     private LinkedList lnkdlist;
     @Before
     public void setUp() throws Exception {
@@ -14,6 +15,27 @@ public class LinkedListTest {
         lnkdlist.insertAtHead('b');
         lnkdlist.insertAtHead(5);
         lnkdlist.insertAtHead(5.5);
+    }
+
+    @Test
+    public void deleteDuplicates() throws Exception {
+        LinkedList listWithDuplicates = new LinkedList();
+        listWithDuplicates.insertAtHead('a');
+        listWithDuplicates.insertAtHead('b');
+        listWithDuplicates.insertAtHead(5);
+        listWithDuplicates.insertAtHead('a');
+        listWithDuplicates.insertAtHead('b');
+        listWithDuplicates.insertAtHead(5);
+
+        listWithDuplicates.deleteDuplicates();
+        assertEquals(listWithDuplicates.length(), 3);
+    }
+
+    @Test
+    public void reverse() throws Exception {
+        lnkdlist.reverse();
+        assertEquals(lnkdlist.getHead().getData(), 'a');
+        assertEquals(lnkdlist.length(), 4);
     }
 
     @Test
