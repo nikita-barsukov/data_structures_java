@@ -5,9 +5,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by natalydauer on 26/04/16.
- */
 public class QueueTest {
     private Queue q;
     @Before
